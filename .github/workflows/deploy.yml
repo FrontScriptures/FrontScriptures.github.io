@@ -39,5 +39,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           BRANCH: FrontPages
-          FOLDER: .vuepress/dist
+          FOLDER: docs/.vuepress/dist
           SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
