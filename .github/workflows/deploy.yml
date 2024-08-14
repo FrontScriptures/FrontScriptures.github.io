@@ -17,7 +17,7 @@ jobs:
       - name: checkout # 检出代码
       - uses: actions/checkout@v2 # 使用 actions/checkout action 检出代码到工作空间。
       
-	  # 这一步安装 Node.js v16。
+      # 这一步安装 Node.js v16。
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
@@ -29,8 +29,8 @@ jobs:
         id: npm-cache
         with:
           path: |
-          	~/.npm
-      		  **/node_modules
+            ~/.npm
+      	    **/node_modules
           key: ${{ runner.os }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-npm-cache-
@@ -41,7 +41,7 @@ jobs:
         if: steps.npm-cache.outputs['restore-keys'] == ''
         run: npm install
 
-     # 运行构建脚本
+      # 运行构建脚本
       - name: Run Build Script
         run: npm run build
         
